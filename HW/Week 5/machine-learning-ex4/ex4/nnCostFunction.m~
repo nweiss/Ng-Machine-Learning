@@ -133,14 +133,12 @@ J = J_unreg + reg_cost;
 Delta{2} = 1/m * Delta{2};
 Delta{1} = 1/m * Delta{1};
 
-%Theta1_grad = Delta{1} + lambda / m * Theta1;
-%Theta2_grad = Delta{2} + lambda / m * Theta2;
+Theta1_grad = Delta{1}(:,1:end) + lambda / m * Theta1(:,1:end);
+Theta2_grad = Delta{2}(:,1:end) + lambda / m * Theta2(:,1:end);
 
 % Obtain regularized gradient for neural network cost function
-Theta1_grad = Delta{1};
-Theta1_grad(:,2:end) = Theta1_grad(:,2:end) + lambda / m * Theta1(:,2:end);
-Theta2_grad = Delta{2};
-Theta2_grad(:,2:end) = Theta2_grad(:,2:end) + lambda / m * Theta2(:,2:end);
+
+
 % -------------------------------------------------------------
 
 % =========================================================================
