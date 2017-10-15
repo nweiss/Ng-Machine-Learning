@@ -51,7 +51,11 @@ x = zeros(n, 1);
 word_indices_unique = unique(word_indices);
 x = zeros(n,1);
 x(word_indices_unique) = ones(length(word_indices_unique),1);
+s
 
+
+
+tmpstop=1;
 % =========================================================================
     
 
