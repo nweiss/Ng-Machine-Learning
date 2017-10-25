@@ -20,10 +20,16 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
+nSamples = length(idx);
+nClusters = size(centroids,1);
 
-
-
-
+for i = 1:nSamples
+    squaredError = zeros(nClusters,1);
+    for j = 1:nClusters
+        squaredError(j) = norm(X(i,:) - centroids(j,:));
+    end
+    [~,idx(i)] = min(squaredError);
+end
 
 
 

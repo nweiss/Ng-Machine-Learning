@@ -20,9 +20,9 @@ S = zeros(n);
 %       number of examples).
 %
 
-
-
-
+tmpstop = 0;
+cov = 1/m * X' * X;
+[U,S,V] = svd(cov);
 
 
 
